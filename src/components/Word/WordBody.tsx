@@ -1,13 +1,18 @@
 interface Props {
-  children: string;
+  translation: boolean;
 }
 
-const WordBody: React.FC<Props> = ({ children }) => {
+const WordBody: React.FC<Props> = ({ translation }) => {
   return (
     <section className="card__body">
-      <p>{children}</p>
+      <p>
+        {!translation
+          ? 'zaimek zwrotny; *nieakcentowana forma celownika "se" potoczna, używana głównie w języku mówionym'
+          : "Зворотний займенник; * ненаголошена давальна форма «се», розмовна, переважно вживається в розмовній мові"}
+      </p>
       <p className="card__source">
-        Źródło: <a href="https://sjp.pl/się">https://sjp.pl/się</a>
+        {!translation ? "Źródło:" : "Джерело:"}{" "}
+        <a href="https://sjp.pl/się">https://sjp.pl/się</a>
       </p>
     </section>
   );

@@ -9,8 +9,11 @@
 }
 
 .card__heading {
+  align-items: center;
+  display: flex;
   color: #fb6041;
   font-size: 50px;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -19,4 +22,18 @@
   text-decoration: underline;
   cursor: pointer;
   text-align: right;
+}
+
+.card__icon {
+  cursor: pointer;
+}
+
+.card__switch {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+.flag {
+  font-size: 32px;
 }
