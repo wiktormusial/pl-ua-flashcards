@@ -3,7 +3,14 @@ interface Props {
 }
 
 const WordBody: React.FC<Props> = ({ children }) => {
-  return <p className="card__body">{children}</p>;
+  return (
+    <section className="card__body">
+      <p>{children}</p>
+      <p className="card__source">
+        Źródło: <a href="https://sjp.pl/się">https://sjp.pl/się</a>
+      </p>
+    </section>
+  );
 };
 
 export default WordBody;
