@@ -7,6 +7,13 @@
   margin-top: -15px;
   text-align: center;
   font-size: smaller;
+  -webkit-box-shadow: inset 0px 0px 5px -4px rgba(66, 68, 90, 1);
+  -moz-box-shadow: inset 0px 0px 5px -4px rgba(66, 68, 90, 1);
+  box-shadow: inset 0px 0px 15px -4px rgba(66, 68, 90, 1);
+}
+
+.badge > a {
+  color: #fed500;
 }
 
 .badge > a:visited {

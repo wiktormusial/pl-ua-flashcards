@@ -1,11 +1,11 @@
 .card {
   background-color: white;
   border-radius: 5px;
-  width: 100vh;
   -webkit-box-shadow: 0px 0px 41px -28px rgba(66, 68, 90, 1);
   -moz-box-shadow: 0px 0px 41px -28px rgba(66, 68, 90, 1);
   box-shadow: 0px 0px 41px -28px rgba(66, 68, 90, 1);
   padding: 15px;
+  width: 50%;
 }
 
 .card__heading {
@@ -36,4 +36,10 @@
 
 .flag {
   font-size: 32px;
+}
+
+@media screen and (max-width: 760px) {
+  .card {
+    height: 100vh;
+  }
 }

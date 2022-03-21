@@ -10,7 +10,7 @@ const WordFooter: React.FC<Props> = ({
   setWordIndex,
 }) => {
   return (
-    <div>
+    <div className="card__foter">
       <p className="card__link" onClick={() => setWordIndex(wordIndex + 1)}>
         {!translation ? "Następne słowo" : "Наступне слово"}
       </p>
