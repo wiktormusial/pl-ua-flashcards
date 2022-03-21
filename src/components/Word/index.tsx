@@ -17,12 +17,27 @@ const fetchWords = async () => {
 const Word = () => {
   const [translation, setTranslation] = useState(false);
   const [words, setWords] = useState<Words[]>();
+  const [word, setWord] = useState<Words>();
+  const [wordIndex, setWordIndex] = useState(0);
 
   useEffect(() => {
-    fetchWords()
-      .then((res) => setWords(res))
-      .catch((err) => console.error(err));
-  }, []);
+    if (wordIndex === 0) {
+      fetchWords()
+        .then((res) => {
+          console.log(res);
+          setWords(res);
+        })
+        .catch((err) => console.error(err));
+    }
+
+    if (words) {
+      setWord(words[wordIndex]);
+      if (wordIndex === words.length) {
+        console.log("komplet");
+        setWordIndex(0);
+      }
+    }
+  }, [wordIndex]);
 
   if (!words) {
     return <div>Loading</div>;
@@ -39,7 +54,11 @@ const Word = () => {
         </div>
         <WordHeader>{!translation ? "się" : "себе"}</WordHeader>
         <WordBody translation={translation} />
-        <WordFooter translation={translation} />
+        <WordFooter
+          translation={translation}
+          wordIndex={wordIndex}
+          setWordIndex={setWordIndex}
+        />
       </div>
     );
   }
