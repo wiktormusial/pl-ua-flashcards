@@ -21,25 +21,25 @@ const Word = () => {
   const [wordIndex, setWordIndex] = useState(0);
 
   useEffect(() => {
-    if (wordIndex === 0) {
-      fetchWords()
-        .then((res) => {
-          console.log(res);
-          setWords(res);
-        })
-        .catch((err) => console.error(err));
-    }
+    fetchWords()
+      .then((res) => {
+        console.log(res);
+        setWords(res);
+        setWord(res[0]);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
+  useEffect(() => {
     if (words) {
       setWord(words[wordIndex]);
       if (wordIndex === words.length) {
-        console.log("komplet");
         setWordIndex(0);
       }
     }
-  }, [wordIndex]);
+  }, [wordIndex, words]);
 
-  if (!words) {
+  if (!word) {
     return <div>Loading</div>;
   } else {
     return (
@@ -52,8 +52,8 @@ const Word = () => {
           />
           <div className="flag">🇺🇦</div>
         </div>
-        <WordHeader>{!translation ? "się" : "себе"}</WordHeader>
-        <WordBody translation={translation} />
+        <WordHeader>{!translation ? word.word : word.word_ua}</WordHeader>
+        <WordBody translation={translation} word={word} />
         <WordFooter
           translation={translation}
           wordIndex={wordIndex}
