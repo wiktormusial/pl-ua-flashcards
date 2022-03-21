@@ -1,0 +1,14 @@
+.badge {
+  background-color: #193441;
+  color: white;
+  padding: 10px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -15px;
+  text-align: center;
+  font-size: smaller;
+}
+
+.badge > a:visited {
+  color: #fed500;
+}

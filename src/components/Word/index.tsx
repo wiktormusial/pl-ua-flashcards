@@ -6,6 +6,7 @@ import WordHeader from "./WordHeader";
 import WordBody from "./WordBody";
 import WordFooter from "./WordFooter";
 import "./Word.css";
+import StandWithUkraine from "../../StandWithUkraine";
 
 const fetchWords = async () => {
   const response = await axios.get<Words[]>(
@@ -44,6 +45,7 @@ const Word = () => {
   } else {
     return (
       <div className="card">
+        <StandWithUkraine />
         <div className="card__switch">
           <div className="flag">🇵🇱</div>
           <Switch
